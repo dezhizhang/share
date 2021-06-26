@@ -49,6 +49,16 @@ class _LunchContent extends State<LunchContent> {
     }
   }
 
+  //打开第三方
+  thirdParty() async {
+    const url = 'weixin://';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw '您的设置暂不支持';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -68,7 +78,8 @@ class _LunchContent extends State<LunchContent> {
             ElevatedButton(
               child: Text('必送短信'),
               onPressed: sendSms,
-            )
+            ),
+            ElevatedButton(child: Text('打开第三方应用'), onPressed: thirdParty)
           ],
         ),
       ),
