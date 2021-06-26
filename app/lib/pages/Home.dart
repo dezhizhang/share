@@ -77,7 +77,13 @@ class _HomeContent extends State<HomeContent> {
               child: Text('form表单'),
               onPressed: () {
                 Navigator.pushNamed(context, '/form');
-              })
+              }),
+          ElevatedButton(
+            child: Text('table'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/table');
+            },
+          )
         ],
       ),
     );

@@ -9,6 +9,7 @@ import '../pages/ArgsPage.dart';
 import '../pages/Storage.dart';
 import '../pages/DivicePage.dart';
 import '../pages/Movepage.dart';
+import '../pages/TablePage.dart';
 
 //配置路由
 Map<String, dynamic> routes = {
@@ -22,6 +23,7 @@ Map<String, dynamic> routes = {
   '/movepage': (context) => MovePage(),
   '/connectivity': (context) => NetworkPage(),
   '/form': (context) => FromPage(),
+  '/table': (context) => TablePage(),
 };
 
 //固定写法
