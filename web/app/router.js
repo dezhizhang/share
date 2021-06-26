@@ -32,4 +32,6 @@ module.exports = app => {
 
   //api
   router.get('/api/table/list',controller.api.list);
+  //图片上传
+  router.post('/api/image/upload',controller.api.upload);
 };
