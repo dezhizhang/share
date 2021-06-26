@@ -4,8 +4,7 @@ import '../pages/Home.dart';
 import '../pages/HtmlPage.dart';
 import '../pages/Lunchpage.dart';
 import '../pages/ArgsPage.dart';
-
-//  '/registerSecond': (context,{arguments}) => RegisterSecondPage(arguments: arguments),
+import '../pages/Storage.dart';
 
 //配置路由
 Map<String, dynamic> routes = {
@@ -14,6 +13,7 @@ Map<String, dynamic> routes = {
   '/lunchpage': (context) => LunchPage(),
   '/imagepage': (context) => ImagePage(),
   '/argspage': (context, {arguments}) => ArgsPage(arguments: arguments),
+  '/storage': (context) => StoragePage(),
 };
 
 //固定写法

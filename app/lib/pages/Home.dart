@@ -48,6 +48,12 @@ class _HomeContent extends State<HomeContent> {
             onPressed: () {
               Navigator.pushNamed(context, '/imagepage');
             },
+          ),
+          ElevatedButton(
+            child: Text('缓存数据的设置与获取'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/storage');
+            },
           )
         ],
       ),
