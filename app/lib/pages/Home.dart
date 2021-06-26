@@ -54,6 +54,18 @@ class _HomeContent extends State<HomeContent> {
             onPressed: () {
               Navigator.pushNamed(context, '/storage');
             },
+          ),
+          ElevatedButton(
+            child: Text('获取设备信息'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/divice');
+            },
+          ),
+          ElevatedButton(
+            child: Text('视频播放'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/movepage');
+            },
           )
         ],
       ),

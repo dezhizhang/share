@@ -5,6 +5,8 @@ import '../pages/HtmlPage.dart';
 import '../pages/Lunchpage.dart';
 import '../pages/ArgsPage.dart';
 import '../pages/Storage.dart';
+import '../pages/DivicePage.dart';
+import '../pages/Movepage.dart';
 
 //配置路由
 Map<String, dynamic> routes = {
@@ -12,8 +14,10 @@ Map<String, dynamic> routes = {
   '/htmlpage': (context) => HtmlPage(),
   '/lunchpage': (context) => LunchPage(),
   '/imagepage': (context) => ImagePage(),
+  '/divice': (context) => DivicePage(),
   '/argspage': (context, {arguments}) => ArgsPage(arguments: arguments),
   '/storage': (context) => StoragePage(),
+  '/movepage': (context) => MovePage(),
 };
 
 //固定写法
