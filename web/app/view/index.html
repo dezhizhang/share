@@ -1,21 +1,343 @@
-<!--
- * :file description: 
- * :name: /share/web/app/view/index.html
- * :author: 张德志
- * :copyright: (c) 2021, Tungee
- * :date created: 2021-06-26 09:26:36
- * :last editor: 张德志
- * :date last edited: 2021-06-26 09:27:50
--->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>Stexo - Responsive Admin & Dashboard Template | Themesdesign</title>
+    <meta content="Responsive admin theme build on top of Bootstrap 4" name="description" />
+    <meta content="Themesdesign" name="author" />
+    <link rel="shortcut icon" href="/public/images/favicon.ico">
+
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="../plugins/morris/morris.css">
+
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/public/css/metismenu.min.css" rel="stylesheet" type="text/css">
+    <link href="/public/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="/public/css/style.css" rel="stylesheet" type="text/css">
+
 </head>
+
 <body>
-    <div>hello</div>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Top Bar Start -->
+        <div class="topbar">
+
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <a href="index.html" class="logo">
+                    后台管理
+                </a>
+            </div>
+
+            <nav class="navbar-custom">
+                <ul class="navbar-right list-inline float-right mb-0">
+                    <!-- notification -->
+                    <li class="dropdown notification-list list-inline-item">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <i class="mdi mdi-bell-outline noti-icon"></i>
+                            <span class="badge badge-pill badge-danger noti-icon-badge">3</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-menu-lg px-1">
+                            <!-- item-->
+                            <h6 class="dropdown-item-text">
+                                    Notifications
+                                </h6>
+                            <div class="slimscroll notification-item-list">
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                                    <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
+                                    <p class="notify-details"><b>Your order is placed</b><span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-danger"><i class="mdi mdi-message-text-outline"></i></div>
+                                    <p class="notify-details"><b>New Message received</b><span class="text-muted">You have 87 unread messages</span></p>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-info"><i class="mdi mdi-filter-outline"></i></div>
+                                    <p class="notify-details"><b>Your item is shipped</b><span class="text-muted">It is a long established fact that a reader will</span></p>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-success"><i class="mdi mdi-message-text-outline"></i></div>
+                                    <p class="notify-details"><b>New Message received</b><span class="text-muted">You have 87 unread messages</span></p>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-warning"><i class="mdi mdi-cart-outline"></i></div>
+                                    <p class="notify-details"><b>Your order is placed</b><span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
+                                </a>
+
+                            </div>
+                            <!-- All-->
+                            <a href="javascript:void(0);" class="dropdown-item text-center notify-all text-primary">
+                                    View all <i class="fi-arrow-right"></i>
+                                </a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown notification-list list-inline-item">
+                        <div class="dropdown notification-list nav-pro-img">
+                            <a class="dropdown-toggle nav-link arrow-none nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <img src="/public/images/users/user-4.jpg" alt="user" class="rounded-circle">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                <!-- item-->
+                                <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle"></i> Profile</a>
+                                <a class="dropdown-item" href="#"><i class="mdi mdi-wallet"></i> Wallet</a>
+                                <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings"></i> Settings</a>
+                                <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline"></i> Lock screen</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#"><i class="mdi mdi-power text-danger"></i> Logout</a>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <ul class="list-inline menu-left mb-0">
+                    <li class="float-left">
+                        <button class="button-menu-mobile open-left waves-effect">
+                            <i class="mdi mdi-menu"></i>
+                        </button>
+                    </li>
+                    <li class="d-none d-md-inline-block">
+                        <form role="search" class="app-search">
+                            <div class="form-group mb-0">
+                                <input type="text" class="form-control" placeholder="Search..">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+
+            </nav>
+
+        </div>
+        <!-- Top Bar End -->
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <div class="slimscroll-menu" id="remove-scroll">
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu" id="side-menu">
+                        <li>
+                            <a href="/table" class="waves-effect">
+                                <i class="icon-accelerator"></i>
+                                <span> 列表页 </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/form" class="waves-effect">
+                                <i class="icon-calendar"></i>
+                                <span> 表单页 </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/image" class="waves-effect">
+                                <i class="icon-calendar"></i>
+                                <span> 图片页 </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/image" class="waves-effect">
+                                <i class="icon-calendar"></i>
+                                <span> 统计页 </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/other" class="waves-effect">
+                                <i class="icon-calendar"></i>
+                                <span> 其它 </span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Sidebar -->
+                <div class="clearfix"></div>
+
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="page-title-box">
+                    
+                        <!-- end row -->
+                    </div>
+                    <!-- end page-title -->
+
+                    <!-- START ROW -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card m-b-30">
+                                <div class="card-body">
+                                    <h4 class="mt-0 header-title mb-4">Active Deals</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Amount</th>
+                                                    <th scope="col">Contact</th>
+                                                    <th scope="col">Location</th>
+                                                    <th scope="col" colspan="2">Date</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Philip Smead</td>
+                                                    <td><span class="badge badge-success">Delivered</span></td>
+                                                    <td>$9,420,000</td>
+                                                    <td>
+                                                        <div>
+                                                            <img src="/public/images/users/user-2.jpg" alt="" class="thumb-md rounded-circle mr-2"> Philip Smead
+                                                        </div>
+                                                    </td>
+                                                    <td>Houston, TX 77074</td>
+                                                    <td>15/1/2018</td>
+
+                                                    <td>
+                                                        <div>
+                                                            <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Brent Shipley</td>
+                                                    <td><span class="badge badge-warning">Pending</span></td>
+                                                    <td>$3,120,000</td>
+                                                    <td>
+                                                        <div>
+                                                            <img src="/public/images/users/user-3.jpg" alt="" class="thumb-md rounded-circle mr-2"> Brent Shipley
+                                                        </div>
+                                                    </td>
+                                                    <td>Oakland, CA 94612</td>
+                                                    <td>16/1/2019</td>
+
+                                                    <td>
+                                                        <div>
+                                                            <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Robert Sitton</td>
+                                                    <td><span class="badge badge-success">Delivered</span></td>
+                                                    <td>$6,360,000</td>
+                                                    <td>
+                                                        <div>
+                                                            <img src="/public/images/users/user-4.jpg" alt="" class="thumb-md rounded-circle mr-2"> Robert Sitton
+                                                        </div>
+                                                    </td>
+                                                    <td>Hebron, ME 04238</td>
+                                                    <td>17/1/2019</td>
+
+                                                    <td>
+                                                        <div>
+                                                            <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Alberto Jackson</td>
+                                                    <td><span class="badge badge-danger">Cancel</span></td>
+                                                    <td>$5,200,000</td>
+                                                    <td>
+                                                        <div>
+                                                            <img src="/public/images/users/user-5.jpg" alt="" class="thumb-md rounded-circle mr-2"> Alberto Jackson
+                                                        </div>
+                                                    </td>
+                                                    <td>Salinas, CA 93901</td>
+                                                    <td>18/1/2019</td>
+
+                                                    <td>
+                                                        <div>
+                                                            <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>David Sanchez</td>
+                                                    <td><span class="badge badge-success">Delivered</span></td>
+                                                    <td>$7,250,000</td>
+                                                    <td>
+                                                        <div>
+                                                            <img src="/public/images/users/user-6.jpg" alt="" class="thumb-md rounded-circle mr-2"> David Sanchez
+                                                        </div>
+                                                    </td>
+                                                    <td>Cincinnati, OH 45202</td>
+                                                    <td>19/1/2019</td>
+
+                                                    <td>
+                                                        <div>
+                                                            <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- END ROW -->
+
+                </div>
+                <!-- container-fluid -->
+
+            </div>
+            <!-- content -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- jQuery  -->
+    <script src="/public/js/jquery.min.js"></script>
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+    <script src="/public/js/metismenu.min.js"></script>
+    <script src="/public/js/jquery.slimscroll.js"></script>
+    <script src="/public/js/waves.min.js"></script>
+
+    <!--Morris Chart-->
+    <script src="../plugins/morris/morris.min.js"></script>
+    <script src="../plugins/raphael/raphael.min.js"></script>
+
+    <script src="/public/pages/dashboard.init.js"></script>
+
+    <!-- App js -->
+    <script src="/public/js/app.js"></script>
+
 </body>
+
 </html>
