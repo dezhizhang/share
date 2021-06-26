@@ -29,6 +29,12 @@ class _HomeContent extends State<HomeContent> {
             onPressed: () {
               Navigator.pushNamed(context, '/htmlpage');
             },
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/lunchpage');
+            },
+            child: Text('打电话与发短信功能'),
           )
         ],
       ),
