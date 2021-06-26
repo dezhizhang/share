@@ -1,4 +1,5 @@
 import 'package:app/pages/ImagePage.dart';
+import 'package:app/pages/NetworkPage.dart';
 import 'package:flutter/material.dart';
 import '../pages/Home.dart';
 import '../pages/HtmlPage.dart';
@@ -18,6 +19,7 @@ Map<String, dynamic> routes = {
   '/argspage': (context, {arguments}) => ArgsPage(arguments: arguments),
   '/storage': (context) => StoragePage(),
   '/movepage': (context) => MovePage(),
+  'connectivity': (context) => NetworkPage(),
 };
 
 //固定写法
