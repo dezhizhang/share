@@ -1,3 +1,4 @@
+import 'package:app/pages/FormPage.dart';
 import 'package:app/pages/ImagePage.dart';
 import 'package:app/pages/NetworkPage.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ Map<String, dynamic> routes = {
   '/storage': (context) => StoragePage(),
   '/movepage': (context) => MovePage(),
   '/connectivity': (context) => NetworkPage(),
+  '/form': (context) => FromPage(),
 };
 
 //固定写法

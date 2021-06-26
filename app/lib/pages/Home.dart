@@ -72,7 +72,12 @@ class _HomeContent extends State<HomeContent> {
             onPressed: () {
               Navigator.pushNamed(context, '/movepage');
             },
-          )
+          ),
+          ElevatedButton(
+              child: Text('form表单'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/form');
+              })
         ],
       ),
     );

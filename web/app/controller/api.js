@@ -5,7 +5,7 @@
  * :copyright: (c) 2021, Tungee
  * :date created: 2021-06-26 14:25:36
  * :last editor: 张德志
- * :date last edited: 2021-06-26 17:19:54
+ * :date last edited: 2021-06-27 00:42:46
  */
 'use strict';
 const fs=require('fs');
@@ -47,6 +47,17 @@ class ApiController extends Controller {
         this.ctx.body = {
             code:200,
             msg:'上传成功',
+            data:null
+        }
+    }
+    async add() {
+        const data = this.ctx.request.body;
+        console.log(data);
+        const form = new this.ctx.model.Form(data);
+        await form.save();
+        this.ctx.body = {
+            code:200,
+            msg:'添加成功',
             data:null
         }
     }
