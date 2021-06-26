@@ -10,6 +10,7 @@ import '../pages/Storage.dart';
 import '../pages/DivicePage.dart';
 import '../pages/Movepage.dart';
 import '../pages/TablePage.dart';
+import '../pages/EchartsPage.dart';
 
 //配置路由
 Map<String, dynamic> routes = {
@@ -24,6 +25,7 @@ Map<String, dynamic> routes = {
   '/connectivity': (context) => NetworkPage(),
   '/form': (context) => FromPage(),
   '/table': (context) => TablePage(),
+  '/echarts': (context) => EchartsPage(),
 };
 
 //固定写法
