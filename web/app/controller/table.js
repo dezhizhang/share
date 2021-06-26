@@ -5,7 +5,7 @@
  * :copyright: (c) 2021, Tungee
  * :date created: 2021-06-26 09:12:26
  * :last editor: 张德志
- * :date last edited: 2021-06-26 14:16:36
+ * :date last edited: 2021-06-26 14:24:27
  */
 'use strict';
 
@@ -26,7 +26,11 @@ class TableController extends Controller {
     const table = new this.ctx.model.Table(data)
     await table.save();
     await this.ctx.redirect('/table');
-    
+  }
+  async delete() {
+      const data = await this.ctx.request.query;
+      await this.ctx.model.Table.deleteOne({"_id":data.id});
+      await this.ctx.redirect('/table');
   }
 }
 
