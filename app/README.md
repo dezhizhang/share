@@ -1,16 +1,102 @@
 # app
 
-A new Flutter project.
+### 无状态组件
+```
+import 'package:flutter/material.dart';
 
-## Getting Started
+void main() {
+  runApp(MyApp());
+}
 
-This project is a starting point for a Flutter application.
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('flutter'),
+        ),
+        body: HomePage(),
+      ),
+    );
+  }
+}
 
-A few resources to get you started if this is your first Flutter project:
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      child: Center(
+        child: Text('StatelessWidget'),
+      ),
+    );
+  }
+}
+```
+### 有状态组件
+```
+import 'package:flutter/material.dart';
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+void main() {
+  runApp(MyApp());
+}
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('flutter'),
+        ),
+        body: HomePage(),
+      ),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  _HomePage createState() => _HomePage();
+}
+
+class _HomePage extends State<HomePage> {
+  int count = 0;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      padding: EdgeInsets.all(40),
+      child: Center(
+        child: Column(
+          children: <Widget>[
+            Container(
+              child: Text('$count'),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+                child: Text('increment'),
+                onPressed: () {
+                  setState(() {
+                    count = count + 1;
+                  });
+                }),
+            SizedBox(height: 20),
+            ElevatedButton(
+                child: Text('decrement'),
+                onPressed: () {
+                  setState(() {
+                    count = count - 1;
+                  });
+                })
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+
