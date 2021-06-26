@@ -6,7 +6,7 @@ class HomePage extends StatelessWidget {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('home'),
+        title: Text('首页'),
       ),
       body: HomeContent(),
     );

@@ -19,10 +19,31 @@ class LunchContent extends StatefulWidget {
 }
 
 class _LunchContent extends State<LunchContent> {
+  //打开外部应用
   openApplication() async {
     const url = "https://www.baidu.com";
     if (await canLaunch(url)) {
       await launch(url);
+    } else {
+      throw '您的设置暂不支持';
+    }
+  }
+
+  //打电话
+  telPhone() async {
+    const tel = 'tel:15992478448';
+    if (await canLaunch(tel)) {
+      await launch(tel);
+    } else {
+      throw '您的设置暂不支持';
+    }
+  }
+
+  //发短信
+  sendSms() async {
+    const sms = "sms:15992478448";
+    if (await canLaunch(sms)) {
+      await launch(sms);
     } else {
       throw '您的设置暂不支持';
     }
@@ -39,6 +60,14 @@ class _LunchContent extends State<LunchContent> {
             ElevatedButton(
               child: Text('打开外部应用'),
               onPressed: openApplication,
+            ),
+            ElevatedButton(
+              child: Text('拨打电话'),
+              onPressed: telPhone,
+            ),
+            ElevatedButton(
+              child: Text('必送短信'),
+              onPressed: sendSms,
             )
           ],
         ),
