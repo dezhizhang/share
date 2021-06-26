@@ -5,7 +5,7 @@
  * :copyright: (c) 2021, Tungee
  * :date created: 2021-06-26 09:12:26
  * :last editor: 张德志
- * :date last edited: 2021-06-26 11:53:41
+ * :date last edited: 2021-06-26 12:04:12
  */
 'use strict';
 
@@ -26,4 +26,10 @@ exports.ejs = {
   enable: true,
   package: 'egg-view-ejs',
 };
+
+exports.mongo = {
+  enable:true,
+  package:'egg-mongo-native'
+}
+
 

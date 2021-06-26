@@ -5,7 +5,7 @@
  * :copyright: (c) 2021, Tungee
  * :date created: 2021-06-26 09:12:26
  * :last editor: 张德志
- * :date last edited: 2021-06-26 11:57:12
+ * :date last edited: 2021-06-26 14:16:36
  */
 'use strict';
 
@@ -13,16 +13,20 @@ const Controller = require('egg').Controller;
 
 class TableController extends Controller {
   async index() {
-    await this.ctx.render('/table.html');
+    const list = await this.ctx.model.Table.find();
+    await this.ctx.render('/table.html',{
+        list
+    });
   }
   async add() {
       await this.ctx.render('/tableForm.html')
   }
   async doAdd() {
-    let data = this.ctx.request.body;
-    let table = new this.ctx.model.Table(data);
+    const data = this.ctx.request.body;
+    const table = new this.ctx.model.Table(data)
     await table.save();
-    await this.success('/table','增加用户成功');
+    await this.ctx.redirect('/table');
+    
   }
 }
 

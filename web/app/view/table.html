@@ -5,7 +5,7 @@
  * :copyright: (c) 2021, Tungee
  * :date created: 2021-06-26 09:26:36
  * :last editor: 张德志
- * :date last edited: 2021-06-26 11:33:09
+ * :date last edited: 2021-06-26 14:16:14
 -->
 <%include ./header.html%>
 <%include ./sidebar.html%>
@@ -47,92 +47,21 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>张三</td>
-                                                    <td>22</td>
-                                                    <td>男</td>
-                                                    <td>15083356**90</td>
-                                                    <td>广州</td>
-                                                    <td>
-                                                        <div>
-                                                            <a href="#" class="btn btn-primary btn-sm">编辑</a>
-                                                            <a href="#" class="btn btn-danger btn-sm">编辑</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Brent Shipley</td>
-                                                    <td><span class="badge badge-warning">Pending</span></td>
-                                                    <td>$3,120,000</td>
-                                                    <td>
-                                                        <div>
-                                                            <img src="/public/images/users/user-3.jpg" alt="" class="thumb-md rounded-circle mr-2"> Brent Shipley
-                                                        </div>
-                                                    </td>
-                                                    <td>Oakland, CA 94612</td>
-                                                    <td>16/1/2019</td>
-
-                                                    <td>
-                                                        <div>
-                                                            <a href="#" class="btn btn-primary btn-sm">编辑</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Robert Sitton</td>
-                                                    <td><span class="badge badge-success">Delivered</span></td>
-                                                    <td>$6,360,000</td>
-                                                    <td>
-                                                        <div>
-                                                            <img src="/public/images/users/user-4.jpg" alt="" class="thumb-md rounded-circle mr-2"> Robert Sitton
-                                                        </div>
-                                                    </td>
-                                                    <td>Hebron, ME 04238</td>
-                                                    <td>17/1/2019</td>
-
-                                                    <td>
-                                                        <div>
-                                                            <a href="#" class="btn btn-primary btn-sm">编辑</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Alberto Jackson</td>
-                                                    <td><span class="badge badge-danger">Cancel</span></td>
-                                                    <td>$5,200,000</td>
-                                                    <td>
-                                                        <div>
-                                                            <img src="/public/images/users/user-5.jpg" alt="" class="thumb-md rounded-circle mr-2"> Alberto Jackson
-                                                        </div>
-                                                    </td>
-                                                    <td>Salinas, CA 93901</td>
-                                                    <td>18/1/2019</td>
-
-                                                    <td>
-                                                        <div>
-                                                            <a href="#" class="btn btn-primary btn-sm">编辑</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>David Sanchez</td>
-                                                    <td><span class="badge badge-success">Delivered</span></td>
-                                                    <td>$7,250,000</td>
-                                                    <td>
-                                                        <div>
-                                                            <img src="/public/images/users/user-6.jpg" alt="" class="thumb-md rounded-circle mr-2"> David Sanchez
-                                                        </div>
-                                                    </td>
-                                                    <td>Cincinnati, OH 45202</td>
-                                                    <td>19/1/2019</td>
-
-                                                    <td>
-                                                        <div>
-                                                            <a href="#" class="btn btn-primary btn-sm">编辑</a>
-                                                            <a href="#" class="btn btn-danger btn-sm">删除</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                                <%for(let i=0;i < list.length;i++) {%>
+                                                    <tr>
+                                                        <td><%=list[i].name%></td>
+                                                        <td><%=list[i].age%></td>
+                                                        <td><%=list[i].sex == 2 ? '男':'女'%></td>
+                                                        <td><%=list[i].phone%></td>
+                                                        <td><%=list[i].address%></td>
+                                                        <td>
+                                                            <div>
+                                                                <a href="#" class="btn btn-primary btn-sm">编辑</a>
+                                                                <a href="/table/delete?id=<%=list[i]._id%>" class="btn btn-danger btn-sm">删除</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                <%}%>
                                             </tbody>
                                         </table>
                                     </div>

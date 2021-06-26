@@ -19,14 +19,10 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
-  config.mongo = {
-    client: {
-      host:"127.0.0.1",
-      port:"27017",
-      name:"share",
-      user:"",
-      password:"",
-      options:{},
+  config.mongoose = {
+    client:{
+      url:'mongodb://127.0.0.1/share',
+      options:{}
     }
   }
 

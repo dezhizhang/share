@@ -16,6 +16,7 @@ import 'egg-jsonp';
 import 'egg-view';
 import 'egg-mongoose';
 import 'egg-view-ejs';
+import 'egg-mongo-native';
 import { EggPluginItem } from 'egg';
 declare module 'egg' {
   interface EggPlugin {
@@ -33,5 +34,6 @@ declare module 'egg' {
     view?: EggPluginItem;
     mongoose?: EggPluginItem;
     ejs?: EggPluginItem;
+    mongo?: EggPluginItem;
   }
 }
