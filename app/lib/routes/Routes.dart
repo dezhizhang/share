@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import '../pages/Home.dart';
+import '../pages/HtmlPage.dart';
 
 //配置路由
 Map<String, dynamic> routes = {
   '/': (context) => HomePage(),
+  '/htmlpage': (context) => HtmlPage(),
 };
 
 //固定写法

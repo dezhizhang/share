@@ -23,7 +23,14 @@ class _HomeContent extends State<HomeContent> {
     // TODO: implement build
     return Center(
       child: Column(
-        children: <Widget>[],
+        children: <Widget>[
+          ElevatedButton(
+            child: Text('解析html'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/htmlpage');
+            },
+          )
+        ],
       ),
     );
   }
