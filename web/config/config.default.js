@@ -30,6 +30,13 @@ module.exports = appInfo => {
     }
   }
 
+  //配置csrf
+  config.security = {
+    csrf:{
+      enable:false
+    }
+  }
+ 
   config.view = {
     mapping: {
       '.html': 'ejs',

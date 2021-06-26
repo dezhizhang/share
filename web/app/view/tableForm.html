@@ -1,0 +1,104 @@
+            <%include ./header.html%>
+            <%include ./sidebar.html%>
+        
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="page-title-box">
+                            <div class="row align-items-center">
+                               
+                            </div> <!-- end row -->
+                        </div>
+                        <!-- end page-title -->
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card m-b-30">
+                                    <div class="card-body">
+                                        <form class="" action="/table/doAdd" method="POST">
+                                            <div class="form-group">
+                                                <label>姓名</label>
+                                                <input name="name" type="text" class="form-control" placeholder="请输入姓名"/>
+                                            </div>
+        
+                                            <div class="form-group">
+                                                <label>年龄</label>
+                                                <div>
+                                                    <input name="age" type="password" id="pass2" class="form-control" placeholder="请输入年龄"/>
+                                                </div>
+                                            </div>
+        
+                                            <div class="form-group">
+                                                <label>姓别</label>
+                                                <div >
+                                                    <select class="form-control" name="sex">
+                                                        <option value="2">男</option>
+                                                        <option value="1">女</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>电话</label>
+                                                <div>
+                                                    <input name="phone" type="text" class="form-control" placeholder="请输入电话"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>地址</label>
+                                                <div>
+                                                    <input name="address" type="text" class="form-control"
+                                                           placeholder="请输入地址"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div>
+                                                    <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                                        提交
+                                                    </button>
+                                                    <button type="reset" class="btn btn-secondary waves-effect m-l-5">
+                                                        取消
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+        
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
+                    </div>
+                    <!-- container-fluid -->
+
+                </div>
+                <!-- content -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        <!-- jQuery  -->
+        <script src="/public/js/jquery.min.js"></script>
+        <script src="/public/js/bootstrap.bundle.min.js"></script>
+        <script src="/public/js/metismenu.min.js"></script>
+        <script src="/public/js/jquery.slimscroll.js"></script>
+        <script src="/public/js/waves.min.js"></script>
+        <!-- App js -->
+        <script src="/public/js/app.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('form').parsley();
+            });
+        </script>
+
+        
+    </body>
+
+</html>
