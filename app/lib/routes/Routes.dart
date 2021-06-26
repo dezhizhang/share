@@ -19,7 +19,7 @@ Map<String, dynamic> routes = {
   '/argspage': (context, {arguments}) => ArgsPage(arguments: arguments),
   '/storage': (context) => StoragePage(),
   '/movepage': (context) => MovePage(),
-  'connectivity': (context) => NetworkPage(),
+  '/connectivity': (context) => NetworkPage(),
 };
 
 //固定写法

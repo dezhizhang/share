@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:connectivity/connectivity.dart';
 
@@ -28,28 +26,29 @@ class _NetWorkContent extends State<NetWorkContent> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    this.getNetwork();
+    getNetWork();
   }
 
-  getNetwork() async {
-    subscription = Connectivity()
-        .onConnectivityChanged
-        .listen((ConnectivityResult result) {
-      if (result == ConnectivityResult.wifi) {
-        setState(() {
-          _stateText = "处于wifi";
-        });
-      } else if (result == ConnectivityResult.mobile) {
-        setState(() {
-          _stateText = "处于手机网络";
-        });
-      } else {
-        setState(() {
-          _stateText = "没有网络";
-        });
-      }
-      // Got a new connectivity status!
-    });
+  getNetWork() async {
+    var result = await (Connectivity().checkConnectivity());
+    if (result == ConnectivityResult.mobile) {
+      setState(() {
+        _stateText = '手话在线';
+      });
+    } else if (result == ConnectivityResult.wifi) {
+      setState(() {
+        _stateText = 'wifi在线';
+      });
+    } else {
+      setState(() {
+        _stateText = '没有网络';
+      });
+    }
+  }
+
+  @override
+  dispose() {
+    super.dispose();
   }
 
   @override
