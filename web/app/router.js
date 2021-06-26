@@ -5,7 +5,7 @@
  * :copyright: (c) 2021, Tungee
  * :date created: 2021-06-26 09:12:26
  * :last editor: 张德志
- * :date last edited: 2021-06-26 16:52:59
+ * :date last edited: 2021-06-26 17:16:21
  */
 'use strict';
 
@@ -25,6 +25,7 @@ module.exports = app => {
   router.get('/image',controller.image.index);
   router.get('/image/add',controller.image.add);
   router.post('/image/doAdd',controller.image.doAdd);
+  router.get('/image/delete',controller.image.delete);
 
 
 

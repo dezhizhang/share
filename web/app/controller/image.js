@@ -5,7 +5,7 @@
  * :copyright: (c) 2021, Tungee
  * :date created: 2021-06-26 09:12:26
  * :last editor: 张德志
- * :date last edited: 2021-06-26 17:08:18
+ * :date last edited: 2021-06-26 17:16:04
  */
 'use strict';
 const fs=require('fs');
@@ -44,7 +44,13 @@ class HomeController extends Controller {
     }      
     let image =new this.ctx.model.Image(Object.assign(files,parts.field));
     let result=await image.save();
-    // await this.success('/admin/focus','增加轮播图成功');
+    await this.ctx.redirect('/image');
+  }
+
+  async delete() {
+    const { id } = this.ctx.request.query;
+    await this.ctx.model.Image.deleteOne({"_id":id});
+    await this.ctx.redirect('/image');
   }
 
 }
