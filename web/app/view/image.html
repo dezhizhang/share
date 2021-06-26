@@ -1,0 +1,98 @@
+<!--
+ * :file description: 
+ * :name: /share/web/app/view/image.html
+ * :author: 张德志
+ * :copyright: (c) 2021, Tungee
+ * :date created: 2021-06-26 09:26:36
+ * :last editor: 张德志
+ * :date last edited: 2021-06-26 17:11:54
+-->
+<%include ./header.html%>
+<%include ./sidebar.html%>
+        <!-- ========== Left Sidebar Start ========== -->
+       
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="page-title-box">
+                    
+                        <!-- end row -->
+                    </div>
+                    <!-- end page-title -->
+
+                    <!-- START ROW -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card m-b-30">
+                                <div class="card-body">
+                                    <div style="margin-bottom: 16px;">
+                                        <a href="/image/add" class="btn btn-primary">增加图片</a>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">名称</th>
+                                                    <th scope="col">图片</th>
+                                                    <th scope="col">增加时间</th>
+                                                    <th scope="col">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <%for(let i=0;i < list.length;i++) {%>
+                                                    <tr>
+                                                        <td><%=list[i].name%></td>
+                                                        <td><img src="<%=list[i].url%>" style="width: 120px; height: 100px;"></td>
+                                                        <td><%=list[i].add_time%></td>
+                                                        <td>
+                                                            <div>
+                                                                <a href="#" class="btn btn-primary btn-sm">编辑</a>
+                                                                <a href="/image/delete?id=<%=list[i]._id%>" class="btn btn-danger btn-sm">删除</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                <%}%>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- END ROW -->
+
+                </div>
+                <!-- container-fluid -->
+
+            </div>
+            <!-- content -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- jQuery  -->
+    <script src="/public/js/jquery.min.js"></script>
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+    <script src="/public/js/metismenu.min.js"></script>
+    <script src="/public/js/jquery.slimscroll.js"></script>
+    <script src="/public/js/waves.min.js"></script>
+    <script src="/public/pages/dashboard.init.js"></script>
+
+    <!-- App js -->
+    <script src="/public/js/app.js"></script>
+
+</body>
+
+</html>

@@ -5,7 +5,7 @@
  * :copyright: (c) 2021, Tungee
  * :date created: 2021-06-26 09:12:26
  * :last editor: 张德志
- * :date last edited: 2021-06-26 14:26:28
+ * :date last edited: 2021-06-26 16:52:59
  */
 'use strict';
 
@@ -14,11 +14,18 @@
  */
 module.exports = app => {
   const { router, controller } = app;
+  //table
   router.get('/', controller.table.index);
   router.get('/table', controller.table.index);
   router.get('/table/add',controller.table.add);
   router.post('/table/doAdd',controller.table.doAdd);
   router.get('/table/delete',controller.table.delete);
+  
+  //image
+  router.get('/image',controller.image.index);
+  router.get('/image/add',controller.image.add);
+  router.post('/image/doAdd',controller.image.doAdd);
+
 
 
 

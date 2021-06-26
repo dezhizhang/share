@@ -4,12 +4,14 @@
 import 'egg';
 import ExportApi = require('../../../app/controller/api');
 import ExportHome = require('../../../app/controller/home');
+import ExportImage = require('../../../app/controller/image');
 import ExportTable = require('../../../app/controller/table');
 
 declare module 'egg' {
   interface IController {
     api: ExportApi;
     home: ExportHome;
+    image: ExportImage;
     table: ExportTable;
   }
 }

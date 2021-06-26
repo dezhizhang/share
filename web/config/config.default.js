@@ -16,6 +16,8 @@ module.exports = appInfo => {
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1624669936713_6858';
 
+  config.uploadDir = 'app/public/upload';
+
   // add your middleware config here
   config.middleware = [];
 
