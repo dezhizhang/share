@@ -1,5 +1,5 @@
 /*
- * :file description: 
+ * :file description:
  * :name: /share/web/app/controller/form.js
  * :author: 张德志
  * :copyright: (c) 2021, Tungee
@@ -14,12 +14,12 @@ const Controller = require('egg').Controller;
 class FormController extends Controller {
   async index() {
     const list = await this.ctx.model.Form.find();
-    await this.ctx.render('/form.html',{
-      list
+    await this.ctx.render('/form.html', {
+      list,
     });
   }
   async add() {
-    await this.ctx.render('/formForm.html')
+    await this.ctx.render('/formForm.html');
   }
   async doAdd() {
     const data = this.ctx.request.body;
@@ -29,8 +29,8 @@ class FormController extends Controller {
   }
   async delete() {
     const { id } = this.ctx.request.query;
-    await this.ctx.model.Form.deleteOne({'_id':id});
-    await this.ctx.redirect('/form'); 
+    await this.ctx.model.Form.deleteOne({ _id: id });
+    await this.ctx.redirect('/form');
   }
 }
 
