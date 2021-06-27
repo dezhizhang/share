@@ -30,15 +30,30 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">标题</th>
+                                                    <th scope="col">副标题</th>
                                                     <th scope="col">价格</th>
-                                                    <th scope="col">状态</th>
                                                     <th scope="col">图片</th>
-                                                   
+                                                    <th scope="col">状态</th>
+                                                  
                                                     <th scope="col">操作</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                              
+                                                <%for(let i=0;i < list.length;i++) {%>
+                                                    <tr>
+                                                        <td><%=list[i].title%></td>
+                                                        <td><%=list[i].subtitle%></td>
+                                                        <td><%=list[i].price%></td>
+                                                        <td><img style="width: 120px; height: 100;" src="<%=list[i].url%>"/></td>
+                                                        <td><%=list[i].status == 1 ? '激活':'禁止'%></td>
+                                                        <td>
+                                                            <div>
+                                                                <a href="#" class="btn btn-primary btn-sm">编辑</a>
+                                                                <a href="/list/delete?id=<%=list[i]._id%>" class="btn btn-danger btn-sm">删除</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                   <%}%>
                                             </tbody>
                                         </table>
                                     </div>

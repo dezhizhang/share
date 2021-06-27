@@ -7,7 +7,7 @@ module.exports = app => {
     const ListSchema = new Schema({
         title: { type: String },
         price: { type: String },
-        url: { type: Number },
+        url: { type: String },
         status: { type: String },
         subtitle: { type: String },
         add_time: {

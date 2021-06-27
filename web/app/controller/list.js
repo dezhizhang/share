@@ -5,7 +5,10 @@ const Controller = require('egg').Controller;
 
 class HomeController extends Controller {
   async index() {
-    await this.ctx.render('/list.html');
+    const list = await this.ctx.model.List.find();
+    await this.ctx.render('/list.html', {
+      list,
+    });
   }
   async add() {
     await this.ctx.render('/listForm.html');
@@ -28,8 +31,8 @@ class HomeController extends Controller {
         [fieldname]: dir.saveDir,
       });
     }
-    const list = new this.ctx.model.List(Object.assign(files, parts.field));
-    await list.save();
+    const image = new this.ctx.model.List(Object.assign(files, parts.field));
+    await image.save();
     await this.ctx.redirect('/list');
   }
 }
