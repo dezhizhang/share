@@ -35,6 +35,11 @@ class HomeController extends Controller {
     await image.save();
     await this.ctx.redirect('/list');
   }
+  async delete() {
+    const { id } = this.ctx.request.query;
+    await this.ctx.model.List.deleteOne({ _id: id });
+    await this.ctx.redirect('/list');
+  }
 }
 
 module.exports = HomeController;

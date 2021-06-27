@@ -59,6 +59,28 @@ class ApiController extends Controller {
       data: null,
     };
   }
+  async search() {
+    const page = this.ctx.query.page;
+    if (!page) {
+      this.ctx.body = {
+        code: '405',
+        msg: '传入的参数有误',
+        data: null,
+      };
+    }
+    const pageSize = 10;
+    const totalNum = await this.ctx.model.List.find({}).count();
+    const totalPage = Math.ceil(totalNum / pageSize);
+    const data = await this.ctx.model.List.find().skip((page - 1) * pageSize).limit(pageSize);
+    this.ctx.body = {
+      code: 200,
+      msg: '成功',
+      success: true,
+      data,
+      page,
+      total: totalPage,
+    };
+  }
 }
 
 module.exports = ApiController;

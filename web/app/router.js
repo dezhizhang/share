@@ -26,8 +26,14 @@ module.exports = app => {
   router.get('/list', controller.list.index);
   router.get('/list/add', controller.list.add);
   router.post('/list/doAdd', controller.list.doAdd);
+  router.get('/list/delete', controller.list.delete);
   //api
   router.get('/api/table/list', controller.api.list);
+  //图片上传
   router.post('/api/image/upload', controller.api.upload);
+  //表单添加
   router.post('/api/form/add', controller.api.add);
+  //列表页
+  router.get('/api/list/search', controller.api.search);
+
 };
