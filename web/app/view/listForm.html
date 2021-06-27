@@ -1,0 +1,103 @@
+<%include ./header.html%>
+<%include ./sidebar.html%>
+
+<!-- Left Sidebar End -->
+
+<!-- ============================================================== -->
+<!-- Start right Content here -->
+<!-- ============================================================== -->
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="page-title-box">
+                <div class="row align-items-center">
+                   
+                </div> <!-- end row -->
+            </div>
+            <!-- end page-title -->
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <form class="" action="/list/doAdd" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label>标题</label>
+                                    <input name="title" type="text" class="form-control" placeholder="请输入标题"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>价格</label>
+                                    <div>
+                                        <input name="price" type="text" id="pass2" class="form-control" placeholder="请输入价格"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>图片</label>
+                                    <div>
+                                        <input name="url" type="file" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>状态</label>
+                                    <div >
+                                        <select class="form-control" name="status" placeholder="请选择状态">
+                                            <option value="1">激活</option>
+                                            <option value="2">禁止</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>副标题</label>
+                                    <div>
+                                        <textarea name="subtitle" class="form-control" rows="5"></textarea>
+                                    </div>
+                                </div>
+                        
+                                <div class="form-group">
+                                    <div>
+                                        <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                            提交
+                                        </button>
+                                        <button type="reset" class="btn btn-secondary waves-effect m-l-5">
+                                            取消
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+        </div>
+        <!-- container-fluid -->
+
+    </div>
+    <!-- content -->
+</div>
+<!-- ============================================================== -->
+<!-- End Right content here -->
+<!-- ============================================================== -->
+
+</div>
+<!-- END wrapper -->
+
+<!-- jQuery  -->
+<script src="/public/js/jquery.min.js"></script>
+<script src="/public/js/bootstrap.bundle.min.js"></script>
+<script src="/public/js/metismenu.min.js"></script>
+<script src="/public/js/jquery.slimscroll.js"></script>
+<script src="/public/js/waves.min.js"></script>
+<!-- App js -->
+<script src="/public/js/app.js"></script>
+<script>
+$(document).ready(function() {
+    $('form').parsley();
+});
+</script>
+
+
+</body>
+
+</html>

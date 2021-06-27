@@ -1,14 +1,4 @@
 /* eslint-disable spaced-comment */
-/*
- // eslint-disable-next-line no-trailing-spaces
- * :file: description
- * :name: /share/web/app/router.js
- * :author: 张德志
- * :copyright: (c) 2021, Tungee
- * :date created: 2021-06-26 09:12:26
- * :last editor: 张德志
- * :date last edited: 2021-06-27 00:39:13
- */
 'use strict';
 
 /**
@@ -34,10 +24,10 @@ module.exports = app => {
   router.get('/form/delete', controller.form.delete);
   //列表
   router.get('/list', controller.list.index);
+  router.get('/list/add', controller.list.add);
+  router.post('/list/doAdd', controller.list.doAdd);
   //api
   router.get('/api/table/list', controller.api.list);
-  //图片上传
   router.post('/api/image/upload', controller.api.upload);
-  //提交表单
   router.post('/api/form/add', controller.api.add);
 };
