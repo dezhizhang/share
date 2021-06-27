@@ -44,6 +44,12 @@ class _HomeContent extends State<HomeContent> {
             child: Text('打电话与发短信功能'),
           ),
           ElevatedButton(
+            child: Text('扫码'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/scan');
+            },
+          ),
+          ElevatedButton(
             child: Text('拍照与上传相册'),
             onPressed: () {
               Navigator.pushNamed(context, '/imagepage');
