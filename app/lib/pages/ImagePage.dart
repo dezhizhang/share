@@ -35,9 +35,6 @@ class _ImageContent extends State<ImageContent> {
       "sex": "男",
       "file": await MultipartFile.fromFile(_image as String)
     });
-
-    var res =
-        await Dio().post('http://jd.itying.com/imgupload', data: formData);
   }
 
   _openGallery() async {

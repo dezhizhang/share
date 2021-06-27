@@ -11,6 +11,7 @@ import '../pages/DivicePage.dart';
 import '../pages/Movepage.dart';
 import '../pages/TablePage.dart';
 import '../pages/EchartsPage.dart';
+import '../pages/ListPage.dart';
 
 //配置路由
 Map<String, dynamic> routes = {
@@ -26,6 +27,7 @@ Map<String, dynamic> routes = {
   '/form': (context) => FromPage(),
   '/table': (context) => TablePage(),
   '/echarts': (context) => EchartsPage(),
+  '/list': (context) => ListPage(),
 };
 
 //固定写法
