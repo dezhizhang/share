@@ -26,15 +26,17 @@ class _ImageContent extends State<ImageContent> {
     setState(() {
       _image = image;
     });
+    _uploadImage(image);
   }
 
-  _uploadImage() async {
+  _uploadImage(assetInfo) async {
     FormData formData = new FormData.fromMap({
       "name": "zhangsan",
       "age": 20,
       "sex": "男",
-      "file": await MultipartFile.fromFile(_image as String)
+      "file": await MultipartFile.fromBytes(_image),
     });
+    print(formData);
   }
 
   _openGallery() async {
@@ -62,7 +64,7 @@ class _ImageContent extends State<ImageContent> {
             ),
             ElevatedButton(
               child: Text('上传文件'),
-              onPressed: _uploadImage,
+              onPressed: () {},
             ),
           ],
         ),
