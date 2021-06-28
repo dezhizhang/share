@@ -6,6 +6,7 @@ import ExportApi = require('../../../app/controller/api');
 import ExportForm = require('../../../app/controller/form');
 import ExportHome = require('../../../app/controller/home');
 import ExportImage = require('../../../app/controller/image');
+import ExportList = require('../../../app/controller/list');
 import ExportTable = require('../../../app/controller/table');
 
 declare module 'egg' {
@@ -14,6 +15,7 @@ declare module 'egg' {
     form: ExportForm;
     home: ExportHome;
     image: ExportImage;
+    list: ExportList;
     table: ExportTable;
   }
 }
