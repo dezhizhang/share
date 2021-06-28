@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/shims/dart_ui_real.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ImagePage extends StatelessWidget {
@@ -20,6 +23,7 @@ class ImageContent extends StatefulWidget {
 }
 
 class _ImageContent extends State<ImageContent> {
+  List list = [];
   var _image;
   takePhoto() async {
     var pickedFile =
@@ -61,8 +65,29 @@ class _ImageContent extends State<ImageContent> {
     });
   }
 
+  downLoad() async {
+    Response response =
+        await Dio().get('http://www.xiaozhi.shop/api/image/download');
+    var data = json.decode(response.toString());
+    if (data['code'] == 200) {
+      setState(() {
+        list = data['data'];
+      });
+    }
+    // var data = json.decode(response.data.toString());
+    // print('------');
+    // print(data);
+    // print('------');
+    // if (data['code'] == 200) {
+    //   setState(() {
+    //     list = data['data'];
+    //   });
+    // }
+  }
+
   @override
   Widget build(BuildContext context) {
+    print(list);
     print(this._image);
     // TODO: implement build
     return Container(
@@ -78,9 +103,18 @@ class _ImageContent extends State<ImageContent> {
               onPressed: _openGallery,
             ),
             ElevatedButton(
-              child: Text('上传文件'),
-              onPressed: () {},
+              child: Text('下载图片'),
+              onPressed: downLoad,
             ),
+            Container(
+                width: 750,
+                height: 400,
+                child: list.length > 0
+                    ? Image.network(
+                        'http://www.xiaozhi.shop${list[list.length - 1]['url']}')
+                    : Center(
+                        child: Text('请下载图片'),
+                      ))
           ],
         ),
       ),
