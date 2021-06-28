@@ -22,19 +22,27 @@ module.exports = appInfo => {
   config.middleware = [];
 
   config.mongoose = {
-    client:{
-      url:'mongodb://127.0.0.1/share',
-      options:{}
-    }
-  }
+    client: {
+      url: 'mongodb://127.0.0.1/share',
+      options: {},
+    },
+  };
 
-  //配置csrf
+  // 配置csrf
   config.security = {
-    csrf:{
-      enable:false
-    }
-  }
- 
+    csrf: {
+      enable: false,
+    },
+  };
+
+  config.cluster = {
+    listen: {
+      path: '',
+      port: 8082,
+      hostname: '0.0.0.0',
+    },
+  };
+
   config.view = {
     mapping: {
       '.html': 'ejs',
