@@ -22,7 +22,7 @@ class ListContent extends StatefulWidget {
 }
 
 class _ListContent extends State<ListContent> {
-  List<Map> list = [];
+  List list = [];
   var page = 1;
   ScrollController _scrollController = new ScrollController();
   @override
@@ -44,9 +44,13 @@ class _ListContent extends State<ListContent> {
   }
 
   loadData() async {
-    const url = 'http://127.0.0.1:7001/api/list/search?page=1';
+    const url = 'http://www.xiaozhi.shop/api/list/search?page=1';
     Response response = await Dio().get(url);
-    var data = json.decode(response.data.toString());
+    var data = json.decode(response.toString());
+    print('--------');
+    print(data);
+    print('--------');
+
     if (data['code'] == 200) {
       setState(() {
         list = data['data'];
@@ -68,7 +72,8 @@ class _ListContent extends State<ListContent> {
               itemCount: list.length,
               itemBuilder: (context, index) {
                 return Container(
-                  child: Image.network('http://127.0.0.1:7001${list[index]}'),
+                  child: Image.network(
+                      'http://www.xiaozhi.shop${list[index]['url']}'),
                 );
               })),
     );
