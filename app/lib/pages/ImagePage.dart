@@ -39,13 +39,13 @@ class _ImageContent extends State<ImageContent> {
       "name": "zhangsan",
       "age": 20,
       "sex": "男",
-      "file": await MultipartFile.fromFile(path, filename: name),
+      "url": await MultipartFile.fromFile(path, filename: name),
     });
     print('++++++');
     print(formData);
     print('++++++');
-    var response =
-        await Dio().post("http://jd.itying.com/imgupload", data: formData);
+    var response = await Dio()
+        .post("http://www.xiaozhi.shop/api/image/upload", data: formData);
     print('=============');
 
     print(response);
