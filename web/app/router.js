@@ -31,6 +31,7 @@ module.exports = app => {
   router.get('/api/table/list', controller.api.list);
   //图片上传
   router.post('/api/image/upload', controller.api.upload);
+  router.get('/api/image/download', controller.api.download);
   //表单添加
   router.post('/api/form/add', controller.api.add);
   //列表页

@@ -49,6 +49,14 @@ class ApiController extends Controller {
       data: null,
     };
   }
+  async download() {
+    const data = await this.ctx.model.Image.find();
+    this.ctx.body = {
+      code: 200,
+      msg: '成功',
+      data,
+    };
+  }
   async add() {
     const data = this.ctx.request.body;
     const form = new this.ctx.model.Form(data);
