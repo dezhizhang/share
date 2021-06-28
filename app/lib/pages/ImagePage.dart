@@ -22,21 +22,36 @@ class ImageContent extends StatefulWidget {
 class _ImageContent extends State<ImageContent> {
   var _image;
   takePhoto() async {
-    var image = ImagePicker.platform.pickImage(source: ImageSource.camera);
-    setState(() {
-      _image = image;
-    });
-    _uploadImage(image);
+    var pickedFile =
+        await ImagePicker.platform.pickImage(source: ImageSource.camera);
+    _uploadImage(pickedFile!);
   }
 
-  _uploadImage(assetInfo) async {
+  _uploadImage(PickedFile file) async {
+    String path = file.path;
+    var name = path.substring(path.lastIndexOf('/') + 1, path.length);
+    print('------');
+    print(path);
+    print(name);
+    print('------');
+
     FormData formData = new FormData.fromMap({
       "name": "zhangsan",
       "age": 20,
       "sex": "男",
-      "file": await MultipartFile.fromBytes(_image),
+      "file": await MultipartFile.fromFile(path, filename: name),
     });
+    print('++++++');
     print(formData);
+    print('++++++');
+    var response =
+        await Dio().post("http://jd.itying.com/imgupload", data: formData);
+    print('=============');
+
+    print(response);
+    print('============');
+
+    //开始上传
   }
 
   _openGallery() async {
