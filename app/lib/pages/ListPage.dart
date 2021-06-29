@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+// import 'package:app/utils/utils.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
@@ -58,24 +59,36 @@ class _ListContent extends State<ListContent> {
     }
   }
 
-  Future<void> handleRefresh() async {
+  Future<void> onRefresh() async {
     this.loadData();
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    // ScreenAdapter.init(context);
     return Container(
-      child: RefreshIndicator(
-          onRefresh: handleRefresh,
-          child: ListView.builder(
-              itemCount: list.length,
-              itemBuilder: (context, index) {
-                return Container(
-                  child: Image.network(
-                      'http://www.xiaozhi.shop${list[index]['url']}'),
-                );
-              })),
-    );
+        child: RefreshIndicator(
+      onRefresh: onRefresh,
+      child: Container(
+        // width: (ScreenAdapter.screenWidth() - ScreenAdapter.width(60)) - 60,
+        // padding: EdgeInsets.all(ScreenAdapter.height(10)),
+        child: InkWell(
+          onTap: () {
+            print('我被点吉了');
+          },
+          child: Column(
+            children: <Widget>[
+              Container(
+                width: double.infinity,
+                child: AspectRatio(
+                  aspectRatio: 1 / 1,
+                  child: Text('hello'),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    ));
   }
 }
