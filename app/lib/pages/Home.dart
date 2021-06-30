@@ -38,16 +38,15 @@ class _HomeContent extends State<HomeContent> {
             },
           ),
           ElevatedButton(
-            child: Text('参数传递'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/routerpage');
+              },
+              child: Text('路由')),
+          ElevatedButton(
+            child: Text('路由参数传递'),
             onPressed: () {
               Navigator.pushNamed(context, '/argspage',
                   arguments: {'id': 1, "name": "张三"});
-            },
-          ),
-          ElevatedButton(
-            child: Text('轮播图'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/swiper');
             },
           ),
           ElevatedButton(

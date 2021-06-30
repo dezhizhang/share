@@ -5,6 +5,7 @@ import 'package:app/pages/ScanPage.dart';
 import 'package:app/pages/SwiperPage.dart';
 import 'package:flutter/material.dart';
 import '../pages/Home.dart';
+import '../pages/RouterPage.dart';
 import '../pages/HtmlPage.dart';
 import '../pages/Lunchpage.dart';
 import '../pages/ArgsPage.dart';
@@ -22,6 +23,7 @@ Map<String, dynamic> routes = {
   '/htmlpage': (context) => HtmlPage(),
   '/lifeCycle': (context) => LifeCyclePage(),
   '/lunchpage': (context) => LunchPage(),
+  '/routerpage': (context) => RouterPage(),
   '/imagepage': (context) => ImagePage(),
   '/divice': (context) => DivicePage(),
   '/argspage': (context, {arguments}) => ArgsPage(arguments: arguments),
