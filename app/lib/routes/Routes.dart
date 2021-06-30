@@ -16,6 +16,7 @@ import '../pages/TablePage.dart';
 import '../pages/EchartsPage.dart';
 import '../pages/ListPage.dart';
 import '../pages/LifeCyclePage.dart';
+import '../pages/ProviderPage.dart';
 
 //配置路由
 Map<String, dynamic> routes = {
@@ -29,6 +30,7 @@ Map<String, dynamic> routes = {
   '/argspage': (context, {arguments}) => ArgsPage(arguments: arguments),
   '/storage': (context) => StoragePage(),
   '/movepage': (context) => MovePage(),
+  '/provider': (context) => ProviderPage(),
   '/connectivity': (context) => NetworkPage(),
   '/form': (context) => FromPage(),
   '/table': (context) => TablePage(),

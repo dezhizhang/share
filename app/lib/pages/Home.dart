@@ -50,6 +50,12 @@ class _HomeContent extends State<HomeContent> {
             },
           ),
           ElevatedButton(
+            child: Text('Provider状态管理'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/provider');
+            },
+          ),
+          ElevatedButton(
             child: Text('解析html'),
             onPressed: () {
               Navigator.pushNamed(context, '/htmlpage');
