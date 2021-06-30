@@ -1,24 +1,30 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import './routes/Routes.dart';
-import 'package:device_preview/device_preview.dart';
 
-void main() => runApp(
-      DevicePreview(
-        enabled: !kReleaseMode,
-        builder: (context) => MyApp(), // Wrap your app
-      ),
-    );
+void main() => (MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // TODO: implement buildrthrow UnimplementedError();
     return MaterialApp(
-      debugShowCheckedModeBanner: false, //去掉debug图标
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder, // Add the builder here
-      initialRoute: '/', //初始化的时候加载的路由
-      onGenerateRoute: onGenerateRoute,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('LifecycleElement'),
+        ),
+        body: HomeContent(),
+      ),
     );
+  }
+}
+
+class HomeContent extends StatefulWidget {
+  _HomeContent createState() => _HomeContent();
+}
+
+class _HomeContent extends State<HomeContent> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Text('hello');
   }
 }
