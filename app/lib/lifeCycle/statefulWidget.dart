@@ -37,33 +37,7 @@ class _HomePage extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
-      padding: EdgeInsets.all(40),
-      child: Center(
-        child: Column(
-          children: <Widget>[
-            Container(
-              child: Text('$count'),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-                child: Text('increment'),
-                onPressed: () {
-                  setState(() {
-                    count = count + 1;
-                  });
-                }),
-            SizedBox(height: 20),
-            ElevatedButton(
-                child: Text('decrement'),
-                onPressed: () {
-                  setState(() {
-                    count = count - 1;
-                  });
-                })
-          ],
-        ),
-      ),
+    return 
     );
   }
 }

@@ -26,6 +26,18 @@ class _HomeContent extends State<HomeContent> {
         padding: EdgeInsets.all(20),
         children: <Widget>[
           ElevatedButton(
+            child: Text('列表页'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/list');
+            },
+          ),
+          ElevatedButton(
+            child: Text('生命周期'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/lifeCycle');
+            },
+          ),
+          ElevatedButton(
             child: Text('参数传递'),
             onPressed: () {
               Navigator.pushNamed(context, '/argspage',
@@ -95,12 +107,6 @@ class _HomeContent extends State<HomeContent> {
             child: Text('table'),
             onPressed: () {
               Navigator.pushNamed(context, '/table');
-            },
-          ),
-          ElevatedButton(
-            child: Text('列表页'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/list');
             },
           ),
           ElevatedButton(

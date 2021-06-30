@@ -14,11 +14,13 @@ import '../pages/Movepage.dart';
 import '../pages/TablePage.dart';
 import '../pages/EchartsPage.dart';
 import '../pages/ListPage.dart';
+import '../pages/LifeCyclePage.dart';
 
 //配置路由
 Map<String, dynamic> routes = {
   '/': (context) => HomePage(),
   '/htmlpage': (context) => HtmlPage(),
+  '/lifeCycle': (context) => LifeCyclePage(),
   '/lunchpage': (context) => LunchPage(),
   '/imagepage': (context) => ImagePage(),
   '/divice': (context) => DivicePage(),

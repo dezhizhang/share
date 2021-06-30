@@ -11,7 +11,7 @@ class ListPage extends StatelessWidget {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('上拉刷新下拉加载更多'),
+        title: Text('列表页'),
       ),
       body: ListContent(),
     );
@@ -48,13 +48,13 @@ class _ListContent extends State<ListContent> {
     const url = 'http://www.xiaozhi.shop/api/list/search?page=1';
     Response response = await Dio().get(url);
     var data = json.decode(response.toString());
-    print('--------');
-    print(data);
-    print('--------');
-
     if (data['code'] == 200) {
+      var arr = [];
+      for (var i = 0; i < 10000; i++) {
+        arr.add(data['data'][1]);
+      }
       setState(() {
-        list = data['data'];
+        list = arr;
       });
     }
   }
@@ -68,31 +68,16 @@ class _ListContent extends State<ListContent> {
     ScreenAdapter.init(context);
     return Container(
         child: RefreshIndicator(
-      onRefresh: onRefresh,
-      child: ListView(
-        children: <Widget>[Text('hello')],
-      ),
-    ));
-  }
-}
-
-class ListContainer extends StatefulWidget {
-  _ListContainer createState() => _ListContainer();
-}
-
-class _ListContainer extends State<ListContainer> {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Container(
-      width: (ScreenAdapter.screenWidth() - ScreenAdapter.width(60)) - 200,
-      padding: EdgeInsets.all(ScreenAdapter.height(10)),
-      child: Container(
-        width: double.infinity,
-        height: 150,
-        color: Colors.red,
-        child: Text('hello'),
-      ),
-    );
+            onRefresh: onRefresh,
+            child: ListView.builder(
+                itemCount: list.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    padding: EdgeInsets.all(10),
+                    child: Image.network(
+                        "http://www.xiaozhi.shop${list[index]['url']}",
+                        fit: BoxFit.cover),
+                  );
+                })));
   }
 }
