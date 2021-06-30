@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-// import 'package:app/utils/utils.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import '../../utils/utils.dart';
 
 class ListPage extends StatelessWidget {
   Future<void> onRefresh() async {}
@@ -65,30 +65,34 @@ class _ListContent extends State<ListContent> {
 
   @override
   Widget build(BuildContext context) {
-    // ScreenAdapter.init(context);
+    ScreenAdapter.init(context);
     return Container(
         child: RefreshIndicator(
       onRefresh: onRefresh,
-      child: Container(
-        // width: (ScreenAdapter.screenWidth() - ScreenAdapter.width(60)) - 60,
-        // padding: EdgeInsets.all(ScreenAdapter.height(10)),
-        child: InkWell(
-          onTap: () {
-            print('我被点吉了');
-          },
-          child: Column(
-            children: <Widget>[
-              Container(
-                width: double.infinity,
-                child: AspectRatio(
-                  aspectRatio: 1 / 1,
-                  child: Text('hello'),
-                ),
-              )
-            ],
-          ),
-        ),
+      child: ListView(
+        children: <Widget>[Text('hello')],
       ),
     ));
+  }
+}
+
+class ListContainer extends StatefulWidget {
+  _ListContainer createState() => _ListContainer();
+}
+
+class _ListContainer extends State<ListContainer> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      width: (ScreenAdapter.screenWidth() - ScreenAdapter.width(60)) - 200,
+      padding: EdgeInsets.all(ScreenAdapter.height(10)),
+      child: Container(
+        width: double.infinity,
+        height: 150,
+        color: Colors.red,
+        child: Text('hello'),
+      ),
+    );
   }
 }
