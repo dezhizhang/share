@@ -19,7 +19,7 @@ class LifeCycleContent extends StatefulWidget {
 
 class _LifeCycleContent extends State<LifeCycleContent> {
   int count = 0;
-  List<Widget> list = [];
+  List arr = [1];
   @override
   void initState() {
     // TODO: implement initState
@@ -66,18 +66,26 @@ class _LifeCycleContent extends State<LifeCycleContent> {
   }
 
   handleAdd() {
-    list.add(Text('2'));
+    arr.add(Text('2'));
     setState(() {
-      list = list;
+      arr = arr;
     });
   }
 
   Widget buildText() {
+    List<Widget> list = [];
     Widget countent;
-    for (var i = 0; i < list.length; i++) {
-      list.add(Text('$i'));
+    for (var i = 0; i < arr.length; i++) {
+      list.add(Container(
+        padding: EdgeInsets.all(10),
+        margin: EdgeInsets.only(left: 10, bottom: 10),
+        width: 40,
+        height: 40,
+        color: Colors.red,
+        child: Text('1'),
+      ));
     }
-    countent = Row(
+    countent = Wrap(
       children: list,
     );
     return countent;
@@ -88,7 +96,6 @@ class _LifeCycleContent extends State<LifeCycleContent> {
     print('------');
     print(count);
     print('------');
-    print(list);
     return Container(
       child: Column(
         children: <Widget>[
@@ -106,7 +113,12 @@ class _LifeCycleContent extends State<LifeCycleContent> {
             ),
           ),
           SizedBox(height: 10),
-          buildText(),
+          ElevatedButton(onPressed: handleAdd, child: Text('添加')),
+          Container(
+            child: buildText(),
+          )
+
+          // ),
         ],
       ),
     );
