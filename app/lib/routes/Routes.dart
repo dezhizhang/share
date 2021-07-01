@@ -1,3 +1,4 @@
+import 'package:app/pages/AdapterPage.dart';
 import 'package:app/pages/FormPage.dart';
 import 'package:app/pages/ImagePage.dart';
 import 'package:app/pages/NetworkPage.dart';
@@ -23,6 +24,7 @@ import '../pages/CanvasPage.dart';
 Map<String, dynamic> routes = {
   '/': (context) => HomePage(),
   '/htmlpage': (context) => HtmlPage(),
+  '/adapter': (context) => AdapterPage(),
   '/lifeCycle': (context) => LifeCyclePage(),
   '/lunchpage': (context) => LunchPage(),
   '/routerpage': (context) => RouterPage(),
