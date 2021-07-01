@@ -39,6 +39,13 @@ class _ProviderContent extends State<ProviderContent> {
   }
 
   @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    print('didChangeDependencies');
+  }
+
+  @override
   Widget build(BuildContext context) {
     var counterProver = Provider.of<Counter>(context);
     //  var cartProvider = Provider.of<Cart>(context);

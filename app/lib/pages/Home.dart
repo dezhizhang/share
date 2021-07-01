@@ -32,6 +32,11 @@ class _HomeContent extends State<HomeContent> {
             },
           ),
           ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/canvas');
+              },
+              child: Text('canvas')),
+          ElevatedButton(
             child: Text('生命周期'),
             onPressed: () {
               Navigator.pushNamed(context, '/lifeCycle');

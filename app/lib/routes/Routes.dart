@@ -17,6 +17,7 @@ import '../pages/EchartsPage.dart';
 import '../pages/ListPage.dart';
 import '../pages/LifeCyclePage.dart';
 import '../pages/ProviderPage.dart';
+import '../pages/CanvasPage.dart';
 
 //配置路由
 Map<String, dynamic> routes = {
@@ -27,6 +28,7 @@ Map<String, dynamic> routes = {
   '/routerpage': (context) => RouterPage(),
   '/imagepage': (context) => ImagePage(),
   '/divice': (context) => DivicePage(),
+  '/canvas': (context) => CustomPaintRoute(),
   '/argspage': (context, {arguments}) => ArgsPage(arguments: arguments),
   '/storage': (context) => StoragePage(),
   '/movepage': (context) => MovePage(),
