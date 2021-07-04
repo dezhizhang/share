@@ -23,6 +23,7 @@ class _EchartsContent extends State<EchartsContent> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
+      width: double.infinity,
       child: Echarts(
         option: '''
               {
@@ -40,8 +41,7 @@ class _EchartsContent extends State<EchartsContent> {
               }
         ''',
       ),
-      width: 300,
-      height: 250,
+      height: 300,
     );
   }
 }

@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/style.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../../utils/utils.dart';
 
 class ListPage extends StatelessWidget {
@@ -65,19 +67,90 @@ class _ListContent extends State<ListContent> {
 
   @override
   Widget build(BuildContext context) {
+    print('------');
+    print(list);
+    print('------');
     ScreenAdapter.init(context);
     return Container(
-        child: RefreshIndicator(
-            onRefresh: onRefresh,
-            child: ListView.builder(
-                itemCount: list.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    padding: EdgeInsets.all(10),
-                    child: Image.network(
-                        "http://www.xiaozhi.shop${list[index]['url']}",
-                        fit: BoxFit.cover),
+      child: RefreshIndicator(
+        onRefresh: onRefresh,
+        child: list.length > 0
+            ? StaggeredGridView.countBuilder(
+                crossAxisCount: 2,
+                itemBuilder: (BuildContext context, int index) {
+                  return ListCard(
+                    title: list[index]['title'],
+                    url: list[index]['url'],
+                    subtitle: list[index]['subtitle'],
+                    status: list[index]['status'],
                   );
-                })));
+                },
+                staggeredTileBuilder: (int index) {
+                  return StaggeredTile.fit(1);
+                })
+            : Text('加载中....'),
+      ),
+    );
+  }
+}
+
+class ListCard extends StatefulWidget {
+  final String url;
+  final String title;
+  final String subtitle;
+  final String status;
+  ListCard(
+      {Key? key,
+      required this.url,
+      required this.title,
+      required this.subtitle,
+      required this.status})
+      : super(key: key);
+  _ListCard createState() => _ListCard();
+}
+
+class _ListCard extends State<ListCard> {
+  @override
+  Widget build(BuildContext context) {
+    ScreenAdapter.init(context);
+    // TODO: implement build
+    return Card(
+      child: Container(
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              height: ScreenAdapter.height(180),
+              child: Image.network('http://www.xiaozhi.shop${widget.url}'),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: ScreenAdapter.width(10)),
+              alignment: Alignment.centerLeft,
+              child: Text('${widget.title}'),
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 10, left: 10),
+              child: Text('${widget.subtitle}',
+                  style: TextStyle(color: Colors.grey, fontSize: 12)),
+            ),
+            Row(
+              children: <Widget>[
+                Container(
+                  child: Text('￥：100', style: TextStyle(color: Colors.red)),
+                ),
+                Expanded(
+                    flex: 1,
+                    child: Container(
+                      margin: EdgeInsets.only(right: ScreenAdapter.width(10)),
+                      alignment: Alignment.centerRight,
+                      child: Text('激活'),
+                    ))
+              ],
+            )
+          ],
+        ),
+        height: ScreenAdapter.height(250),
+      ),
+    );
   }
 }
