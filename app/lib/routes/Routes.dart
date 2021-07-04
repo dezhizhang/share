@@ -2,6 +2,7 @@ import 'package:app/pages/AdapterPage.dart';
 import 'package:app/pages/FormPage.dart';
 import 'package:app/pages/ImagePage.dart';
 import 'package:app/pages/NetworkPage.dart';
+import 'package:app/pages/Nottie.dart';
 import 'package:app/pages/ScanPage.dart';
 import 'package:app/pages/SwiperPage.dart';
 import 'package:flutter/material.dart';
@@ -42,6 +43,7 @@ Map<String, dynamic> routes = {
   '/list': (context) => ListPage(),
   '/scan': (context) => ScanPage(),
   '/swiper': (context) => SwiperPage(),
+  '/lottie': (context) => LottiePage()
 };
 
 //固定写法
