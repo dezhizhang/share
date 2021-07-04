@@ -20,39 +20,62 @@ class MoveContent extends StatefulWidget {
 }
 
 class _MoveContent extends State<MoveContent> {
-  late final videoPlayerController;
-  late final chewieController;
+  @override
+  Widget build(BuildContext context) {
+    //h
+    // TODO: implement buildreturthrow UnimplementedError();
+    return VideoView(
+        'http://vfx.mtime.cn/Video/2019/02/04/mp4/190204084208765161.mp4');
+  }
+}
+
+class VideoView extends StatefulWidget {
+  final String url;
+  final String? cover;
+  final bool autoPlay;
+  final bool looping;
+  final double? aspectRatio;
+  VideoView(this.url,
+      {Key? key,
+      this.cover,
+      this.autoPlay = false,
+      this.looping = false,
+      this.aspectRatio = 16 / 9})
+      : super(key: key);
+  _VideoView createState() => _VideoView();
+}
+
+class _VideoView extends State<VideoView> {
+  late VideoPlayerController _videoPlayerController;
+  late ChewieController _chewieController;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    this.getChewie();
-  }
-
-  getChewie() async {
-    final videoPlayerController = VideoPlayerController.network(
-        'http://vfx.mtime.cn/Video/2019/02/04/mp4/190204084208765161.mp4');
-    await videoPlayerController.initialize();
-
-    chewieController = ChewieController(
-      videoPlayerController: videoPlayerController,
-      autoPlay: true,
-      looping: true,
+    _videoPlayerController = VideoPlayerController.network(widget.url);
+    _chewieController = ChewieController(
+      videoPlayerController: _videoPlayerController,
+      aspectRatio: widget.aspectRatio,
+      autoPlay: widget.autoPlay,
+      looping: widget.looping,
     );
   }
 
   @override
-  void dispose() async {
-    videoPlayerController!.dispose();
-    chewieController!.dispose();
+  void dispose() {
     super.dispose();
+    _videoPlayerController.dispose();
+    _videoPlayerController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Chewie(
-      controller: chewieController,
+    return Container(
+      height: 450,
+      child: Chewie(
+        controller: _chewieController,
+      ),
     );
   }
 }

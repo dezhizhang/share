@@ -67,6 +67,12 @@ class _HomeContent extends State<HomeContent> {
             },
           ),
           ElevatedButton(
+            child: Text('视频'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/movepage');
+            },
+          ),
+          ElevatedButton(
             child: Text('解析html'),
             onPressed: () {
               Navigator.pushNamed(context, '/htmlpage');
