@@ -19,6 +19,7 @@ import '../pages/ListPage.dart';
 import '../pages/LifeCyclePage.dart';
 import '../pages/ProviderPage.dart';
 import '../pages/CanvasPage.dart';
+import '../pages/Animation.dart';
 
 //配置路由
 Map<String, dynamic> routes = {
@@ -41,6 +42,7 @@ Map<String, dynamic> routes = {
   '/echarts': (context) => EchartsPage(),
   '/list': (context) => ListPage(),
   '/scan': (context) => ScanPage(),
+  '/animation': (context) => Expandable(),
   '/lottie': (context) => LottiePage()
 };
 

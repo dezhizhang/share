@@ -142,6 +142,12 @@ class _HomeContent extends State<HomeContent> {
             onPressed: () {
               Navigator.pushNamed(context, '/echarts');
             },
+          ),
+          ElevatedButton(
+            child: Text('按钮'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/animation');
+            },
           )
         ],
       ),
