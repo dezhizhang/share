@@ -4,7 +4,6 @@ import 'package:app/pages/ImagePage.dart';
 import 'package:app/pages/NetworkPage.dart';
 import 'package:app/pages/Nottie.dart';
 import 'package:app/pages/ScanPage.dart';
-import 'package:app/pages/SwiperPage.dart';
 import 'package:flutter/material.dart';
 import '../pages/Home.dart';
 import '../pages/RouterPage.dart';
@@ -42,7 +41,6 @@ Map<String, dynamic> routes = {
   '/echarts': (context) => EchartsPage(),
   '/list': (context) => ListPage(),
   '/scan': (context) => ScanPage(),
-  '/swiper': (context) => SwiperPage(),
   '/lottie': (context) => LottiePage()
 };
 

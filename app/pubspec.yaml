@@ -39,7 +39,6 @@ dependencies:
   lottie: ^1.0.1
   provider: ^5.0.0
   video_player: ^2.1.6
-  flutter_swiper: ^1.1.6
   connectivity: ^3.0.6
   device_preview: ^0.7.3
   flutter_screenutil: ^5.0.0+2
