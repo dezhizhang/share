@@ -58,9 +58,11 @@ class _ImageContent extends State<ImageContent> {
   }
 
   _openGallery() async {
-    var image = ImagePicker.platform.pickImage(source: ImageSource.gallery);
+    var pickedFile =
+        await ImagePicker.platform.pickImage(source: ImageSource.gallery);
+    _uploadImage(pickedFile!);
     setState(() {
-      _image = image;
+      _image = pickedFile;
     });
   }
 

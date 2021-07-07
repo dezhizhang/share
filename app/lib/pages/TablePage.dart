@@ -43,6 +43,7 @@ class _TableContent extends State<TableContent> {
   _tableRowList() {
     var count = list.length;
     dynamic content;
+    // ignore: non_constant_identifier_names
     List<TableRow> Tlist = <TableRow>[
       TableRow(children: [
         TableCell(child: Text('姓名')),
