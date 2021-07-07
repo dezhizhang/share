@@ -19,11 +19,15 @@ class LifeCycleContent extends StatefulWidget {
 
 class _LifeCycleContent extends State<LifeCycleContent> {
   int count = 0;
-  List arr = [1];
+  List<int> list = [1];
+  GlobalKey key = GlobalKey();
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    print('-----------');
+    print('initState1');
+    print('-----------');
     setState(() {
       count = 1;
     });
@@ -65,30 +69,12 @@ class _LifeCycleContent extends State<LifeCycleContent> {
     print('-------------');
   }
 
-  handleAdd() {
-    arr.add(Text('2'));
-    setState(() {
-      arr = arr;
+  handleList() {
+    List list = [];
+    list.add(1);
+    this.setState(() {
+      list = list;
     });
-  }
-
-  Widget buildText() {
-    List<Widget> list = [];
-    Widget countent;
-    for (var i = 0; i < arr.length; i++) {
-      list.add(Container(
-        padding: EdgeInsets.all(10),
-        margin: EdgeInsets.only(left: 10, bottom: 10),
-        width: 40,
-        height: 40,
-        color: Colors.red,
-        child: Text('1'),
-      ));
-    }
-    countent = Wrap(
-      children: list,
-    );
-    return countent;
   }
 
   @override
@@ -97,30 +83,71 @@ class _LifeCycleContent extends State<LifeCycleContent> {
     print(count);
     print('------');
     return Container(
+      padding: EdgeInsets.all(40),
       child: Column(
         children: <Widget>[
           Center(
-            child: Text('$count'),
-          ),
-          Center(
-            child: ElevatedButton(
-              child: Text('increment'),
-              onPressed: () {
-                setState(() {
-                  count = count + 1;
-                });
-              },
+            child: Text(
+              '$count',
+              key: key,
             ),
           ),
-          SizedBox(height: 10),
-          ElevatedButton(onPressed: handleAdd, child: Text('添加')),
-          Container(
-            child: buildText(),
-          )
-
-          // ),
+          Center(
+              child: ElevatedButton(
+            child: Text('increment'),
+            onPressed: () {
+              setState(() {
+                count = count + 1;
+              });
+            },
+          )),
+          //ListContent(count: count),
+          //ElevatedButton(onPressed: this.handleList, child: Text('减少')),
         ],
       ),
+    );
+  }
+}
+
+class ListContent extends StatefulWidget {
+  int count;
+  ListContent({Key? key, required this.count}) : super(key: key);
+  _ListContent createState() => _ListContent();
+}
+
+class _ListContent extends State<ListContent> {
+  @override
+  void didUpdateWidget(covariant ListContent oldWidget) {
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+    print('-------------');
+    print('didUpdateWidget');
+    print('-------------');
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print('-------------');
+    print('initState2');
+    print('--------------');
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    print('------------------');
+    print('dispose');
+    print('------------------');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      child: Text('${widget.count}'),
     );
   }
 }
