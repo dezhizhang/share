@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_html/style.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../../utils/utils.dart';
+import '../model/list.dart';
 
 class ListPage extends StatelessWidget {
   Future<void> onRefresh() async {}
@@ -33,6 +33,7 @@ class _ListContent extends State<ListContent> {
     // TODO: implement initState
     super.initState();
     this.loadData();
+    // this.loadData2();
     //监听滚动条事件
     _scrollController.addListener(() {
       print(_scrollController.position.pixels); //获取滚动条下拉的距离
@@ -61,15 +62,21 @@ class _ListContent extends State<ListContent> {
     }
   }
 
+  loadData2() async {
+    const url = 'http://www.xiaozhi.shop/api/list/search?page=1';
+    Response response = await Dio().get(url);
+    var data = ListModel.fromJson(response.data);
+    print('----------------');
+    print(data.code);
+    print('----------------');
+  }
+
   Future<void> onRefresh() async {
     this.loadData();
   }
 
   @override
   Widget build(BuildContext context) {
-    print('------');
-    print(list);
-    print('------');
     ScreenAdapter.init(context);
     return Container(
       child: RefreshIndicator(
