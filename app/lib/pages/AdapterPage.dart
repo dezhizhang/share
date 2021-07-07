@@ -24,22 +24,27 @@ class _AdapterContent extends State<AdapterContent> {
     ScreenAdapter.init(context);
     // TODO: implement build
     return Container(
-      width: double.infinity,
-      child: Column(
+      child: Row(
         children: <Widget>[
-          ElevatedButton(
-            child: Text('按钮'),
-            onPressed: () {
-              print('按钮');
-            },
-          ),
-          SizedBox(
-            height: ScreenAdapter.height(10),
+          Container(
+            width: ScreenAdapter.width(100),
+            height: ScreenAdapter.height(100),
+            color: Colors.red,
           ),
           Container(
-            width: double.infinity,
-            height: ScreenAdapter.height(40),
-            color: Colors.red,
+            width: ScreenAdapter.width(100),
+            height: ScreenAdapter.height(100),
+            color: Colors.yellow,
+          ),
+          Container(
+            width: ScreenAdapter.width(100),
+            height: ScreenAdapter.height(100),
+            color: Colors.pink,
+          ),
+          Container(
+            width: ScreenAdapter.width(60),
+            height: ScreenAdapter.height(100),
+            color: Colors.green,
           )
         ],
       ),

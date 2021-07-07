@@ -19,6 +19,7 @@ class StorageContent extends StatefulWidget {
 }
 
 class _StorageContent extends State<StorageContent> {
+  String text = '';
   setStorage() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     pref.setString("name", "张三");
@@ -27,6 +28,9 @@ class _StorageContent extends State<StorageContent> {
   getStorage() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     var res = pref.getString('name');
+    setState(() {
+      text = res.toString();
+    });
     print('---');
     print(res);
     print('---');
@@ -53,6 +57,9 @@ class _StorageContent extends State<StorageContent> {
             ElevatedButton(
               child: Text('获取'),
               onPressed: getStorage,
+            ),
+            Container(
+              child: Text('$text'),
             )
           ],
         ),

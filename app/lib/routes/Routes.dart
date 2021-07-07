@@ -1,4 +1,5 @@
 import 'package:app/pages/AdapterPage.dart';
+import 'package:app/pages/BottomNavigation.dart';
 import 'package:app/pages/FormPage.dart';
 import 'package:app/pages/ImagePage.dart';
 import 'package:app/pages/NetworkPage.dart';
@@ -42,6 +43,7 @@ Map<String, dynamic> routes = {
   '/echarts': (context) => EchartsPage(),
   '/list': (context) => ListPage(),
   '/scan': (context) => ScanPage(),
+  '/bottomBar': (context) => BottomNavigationPage(),
   '/animation': (context) => Expandable(),
   '/lottie': (context) => LottiePage()
 };
